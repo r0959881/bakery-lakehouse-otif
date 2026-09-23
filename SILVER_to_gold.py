@@ -1,6 +1,6 @@
 import pandas as pd
 
-silver_dir="/Users/Ammar Haider/Downloads/bakery_lakehouse/data/silver"
+silver_dir="data/silver"
 
 erp_df=pd.read_csv(f"{silver_dir}/erp_silver.csv")
 wms_df=pd.read_csv(f"{silver_dir}/wms_silver.csv")
@@ -98,7 +98,7 @@ print(otif_by_week[["order_week","otif_pct"]])
 
 
 import os
-gold_dir = "/Users/Ammar Haider/Downloads/bakery_lakehouse/data/gold"
+gold_dir = "data/gold"
 os.makedirs(gold_dir, exist_ok=True)
 
 otif_by_customer[["customer_id", "otif_pct"]].to_csv(f"{gold_dir}/otif_by_customer.csv", index=False)

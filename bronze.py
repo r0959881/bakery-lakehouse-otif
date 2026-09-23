@@ -2,7 +2,7 @@
 
 import pandas as pd
 
-Bronze_dir="/Users/Ammar Haider/Downloads/bakery_lakehouse/data/silver"
+Bronze_dir="data/bronze"
 
 
 mes_df=pd.read_csv(f"{Bronze_dir}/mes_export.csv")
@@ -99,7 +99,7 @@ print("\nWMS ROW COUNT AFTER REMOVING BROKEN LINKS:",len(wms_df_clean))
 
 import os
 
-silver_dir="/Users/Ammar Haider/Downloads/bakery_lakehouse/data/silver"
+silver_dir="data/silver"
 os.makedirs(silver_dir, exist_ok=True)
 
 mes_df.to_csv(f"{silver_dir}/mes_silver.csv", index=False)
